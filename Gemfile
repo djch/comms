@@ -73,3 +73,11 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# Authentication
+gem "devise", "~> 4.8"
+
+# Handy utils
+gem "name_of_person", "~> 1.1"
+gem "local_time", "~> 2.1"
+gem "geared_pagination", "~> 1.1"

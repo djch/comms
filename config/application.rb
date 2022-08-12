@@ -1,6 +1,9 @@
 require_relative "boot"
+require_relative '../lib/account_middleware'
 
 require "rails/all"
+
+
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -18,5 +21,7 @@ module Comms
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.middleware.use AccountMiddleware
   end
 end

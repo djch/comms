@@ -2,12 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
+@layer base {
 
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold leading-tight tracking-tight;
+  }
+
+  h1 { @apply text-4xl; }
+  h2 { @apply text-3xl; }
+  h3 { @apply text-2xl; }
+  h4 { @apply text-xl; }
+  h5 { @apply text-lg; }
+  h6 { @apply text-base; }
+
+  a,
+  .link {
+    @apply text-violet-700 dark:text-violet-500;
+    @apply underline;
   }
 }
 
-*/
+@layer components {
+
+  label {
+    @apply font-bold;
+  }
+
+  .field { @apply my-5; }
+  .actions { @apply my-6; }
+
+  select,
+  .form-input {
+    @apply block p-2;
+    @apply text-inherit;
+    @apply bg-transparent;
+    @apply border-gray-500/50 rounded;
+    @apply dark:shadow-inner;
+  }
+
+  select { @apply pr-10; }
+
+  .break {
+    @apply relative z-0;
+    @apply before:absolute before:inset-y-1/2 before:inset-x-0 before:-z-10;
+    @apply before:border before:border-zinc-300 dark:before:border-zinc-700;
+  }
+
+  .break-title {
+    @apply px-3 bg-white;
+  }
+
+  .sheet {
+    @apply relative;
+    @apply min-h-screen px-4 py-6 sm:px-10 sm:py-8 lg:px-24 lg:py-12;
+    @apply bg-white dark:bg-zinc-800;
+    @apply rounded-tl-2xl shadow-softer;
+  }
+
+  .sheet--outer {
+    /* under sheet for breadcrumb nav */
+    @apply -z-10 block px-6 pt-3;
+    @apply absolute -top-12 -left-6 right-0 bottom-0;
+    @apply bg-white dark:bg-slate-800;
+    @apply rounded-tl shadow-soft;
+  }
+
+  .flash {
+    @apply absolute inset-x-0 top-0 z-30 -mt-5;
+    @apply text-center leading-tight;
+  }
+
+  .flash-message {
+    @apply inline-block py-2 px-6;
+    @apply font-medium text-zinc-100;
+    @apply bg-zinc-900/90 dark:text-zinc-900 dark:bg-zinc-500/90;
+    @apply rounded-full;
+  }
+
+  .flash-message > a { @apply text-inherit; }
+
+  .btn {
+    @apply inline-block py-2 px-4;
+    @apply bg-zinc-200 dark:bg-zinc-300;
+    @apply text-black font-medium no-underline;
+    @apply rounded-lg;
+    @apply cursor-pointer;
+    @apply active:shadow-inner;
+  }
+
+  .btn--xs { @apply px-3 py-1 text-sm; }
+  .btn--sm { @apply px-3 py-2 text-sm; }
+
+  .btn--primary { @apply text-white bg-violet-700 dark:bg-violet-800; }
+  .btn--outline { @apply bg-transparent text-zinc-900/80 border hover:border-zinc-900/20; }
+
+  input[type="submit"] {
+    @apply btn btn--primary;
+  }
+}

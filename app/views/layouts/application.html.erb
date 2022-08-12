@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Comms</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <title><%= full_title(yield(:title)) %></title>
   </head>
-
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+  <body class="text-zinc-900 bg-stone-50 dark:text-stone-100 dark:bg-stone-900">
+    <main class="lg:grid lg:gap-4 lg:grid-cols-4">
+      <%# nav sidebar %>
+      <nav class="md:col-span-1 p-4 lg:p-10" aria-label="Main" data-turbo-permanent>
+        <h1 class="md:mt-8 pb-2 text-3xl font-extrabold lg:text-5xl border-b-8 border-violet-400">
+          Comms
+        </h1>
+      </nav>
+      <%# primary content area %>
+      <section class="md:col-span-3 mt-2 sm:mt-4 md:mt-6 lg:mt-8">
+        <article class="sheet">
+          <div id="flash" class="flash">
+            <%= render "flash" %>
+          </div>
+          <%= yield %>
+        </article>
+      </section>
     </main>
   </body>
 </html>

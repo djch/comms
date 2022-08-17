@@ -1,0 +1,16 @@
+<%= form_with model: room do |form| %>
+  <%= render 'application/error_messages', object: form.object %>
+  <div class="my-5">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-input" %>
+  </div>
+  <div class="my-5">
+    <%= form.label :subject %>
+    <%= form.text_field :subject, class: "form-input" %>
+  </div>
+  <%= form.submit %>
+  <%= link_to "Never mind", rooms_path, class: "btn ml-2" %>
+  <% if room.persisted? %>
+    <%= link_to 'Destroy', post, method: :delete, class: , class: "btn block w-full", data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<% end %>

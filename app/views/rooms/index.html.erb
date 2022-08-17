@@ -1,6 +1,6 @@
 <header class="text-center">
-  <h1 class="mb-1 text-5xl">Rooms</h1>
-  <%# link_to 'Add Room', new_rooms_path, class: "btn btn--primary inline-block" %>
+  <h1 class="mb-6 text-5xl">Rooms</h1>
+  <%= link_to 'Add Room', new_room_path, class: "btn btn--primary inline-block" %>
 </header>
 <div class="max-w-2xl mx-auto mt-8 lg:mt-12 divide-y dark:divide-zinc-600">
   <%= render @rooms %>
